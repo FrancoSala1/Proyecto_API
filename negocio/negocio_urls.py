@@ -1,11 +1,12 @@
-from auxiliares.urls_servicios import Urlservicios
+from auxiliares.urls_servicios import UrlServicios
+class NegocioUrls:
 
-class NegocioUrl:
+    #Clase para centralizar la lógica de obtención de URLs.
 
     @staticmethod
     def obtener_url_usuarios():
-        return Urlservicios.get_users_url()
-    
+        return UrlServicios.get_users_url()
+
     @staticmethod
     def obtener_url_posts():
-        return Urlservicios.get_posts_url()
+        return UrlServicios.get_posts_url()

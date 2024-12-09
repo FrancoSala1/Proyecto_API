@@ -1,6 +1,14 @@
 from negocio.negocio_urls import NegocioUrls
 from servicios.ws_jasonplaceholder import WsJsonPlaceholder
 from modelos.usua import User
+import sys
+import os
+
+# Agrega la ruta raíz del proyecto
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from negocio.negocio_urls import NegocioUrls
+
 
 def main():
     # Obtener la URL de usuarios desde el negocio

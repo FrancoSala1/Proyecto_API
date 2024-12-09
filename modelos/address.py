@@ -1,4 +1,5 @@
 class address:
+    #este modelo es para representar una dirección de usuario.
     def __init__(self, street, suite, city,zipcode):
         self.street = street
         self.suite = suite

@@ -2,7 +2,7 @@ from modelos.address import address
 from modelos.compañia import compañia
 
 class User:
-
+# Aqui se representara a un usuario.
     def __init__(self, id, nombre, username, email, address, celular, website, compañia):
         self.id = id
         self.nombre = nombre

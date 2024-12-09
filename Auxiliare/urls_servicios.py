@@ -1,5 +1,5 @@
 class Urlservicios:
-
+# esta clase es para centralizar y manejar las URLS de servicios web.
     BASE_URL = "http://jasonplaceholder.typicode.com"
 
     @staticmethod
