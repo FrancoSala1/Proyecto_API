@@ -1,4 +1,4 @@
-class company:
+class Company:
     # en este se puede representar una compañia asociada a un usuario.
     def __init__(self, name, catchPhrase, bs):
         self.name = name

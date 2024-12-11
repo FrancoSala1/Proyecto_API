@@ -1,5 +1,5 @@
 from modelos.address import address
-from modelos.compañia import compañia
+from modelos.company import compañia
 
 class User:
 # Aqui se representara a un usuario.

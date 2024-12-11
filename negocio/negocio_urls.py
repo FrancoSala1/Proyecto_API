@@ -1,4 +1,4 @@
-from auxiliares.urls_servicios import UrlServicios
+from Auxiliares.urls_servicios import UrlServicios
 class NegocioUrls:
     #Clase para centralizar la lógica de obtención de URLs.
     

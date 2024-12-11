@@ -1,11 +1,24 @@
-class Urlservicios:
-# esta clase es para centralizar y manejar las URLS de servicios web.
-    BASE_URL = "http://jasonplaceholder.typicode.com"
+class UrlServicios:
+    
+    BASE_URL = "https://jsonplaceholder.typicode.com"
+    SERPER_URL = "https://api.serper.dev"
 
     @staticmethod
-    def get_users_url():
-        return f"{Urlservicios.BASE_URL}/users"
-    
+    def obtener_usuarios():
+        return f"{UrlServicios.BASE_URL}/users"
+
     @staticmethod
-    def get_posts_url():
-        return f"{Urlservicios.BASE_URL}/posts"
+    def obtener_usuario_por_id(user_id):
+        return f"{UrlServicios.BASE_URL}/users/{user_id}"
+
+    @staticmethod
+    def crear_usuario():
+        return f"{UrlServicios.BASE_URL}/users"
+
+    @staticmethod
+    def actualizar_usuario(user_id):
+        return f"{UrlServicios.BASE_URL}/users/{user_id}"
+
+    @staticmethod
+    def eliminar_usuario(user_id):
+        return f"{UrlServicios.BASE_URL}/users/{user_id}"
