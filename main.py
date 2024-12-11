@@ -1,4 +1,5 @@
 from negocio.negocio_urls import NegocioUrls
+from servicios import ws_serper
 
 def mostrar_menu():
     print("1. Obtener todos los usuarios")
@@ -32,7 +33,7 @@ def main():
             print(negocio.eliminar_usuario(user_id))
         elif opcion == "6":
             query = input("Ingresa tu búsqueda: ")
-            print(WSSerper.realizar_busqueda(query))
+            print(ws_serper.realizar_busqueda(query))
         elif opcion == "0":
             break
         else:
