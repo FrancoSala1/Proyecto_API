@@ -4,5 +4,10 @@ class Geolo:
         self.lat = lat
         self.lng = lng
 
-    def __str__(self):
-        return f"Latitud: {self.lat}, Longitud: {self.lng}"
+class Address(Geolo):
+    def __init__(self,street, suite, city, zipcode, lat, lng):
+        super().__init__(lat, lng)
+        self.street = street
+        self.suite = suite
+        self.city = city
+        self.zipcode = zipcode
