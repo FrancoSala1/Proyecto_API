@@ -1,4 +1,5 @@
 import requests
+import json
 
 class WSSerper:
     API_KEY = "TU_API_KEY"
