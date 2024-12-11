@@ -1,11 +1,15 @@
-import requests
+import http.client
 import json
 
-class WSSerper:
-    API_KEY = "TU_API_KEY"
-
-    @staticmethod
-    def realizar_busqueda(query):
-        headers = {"X-API-KEY": WSSerper.API_KEY}
-        response = requests.post(f"https://api.serper.dev/search", json={"q": query}, headers=headers)
-        return response.json()
+conn = http.client.HTTPSConnection("google.serper.dev")
+payload = json.dumps({
+  "q": "apple inc"
+})
+headers = {
+  'X-API-KEY': '7a51b4757bb53b36091c98208ed4e9f74be43f7b',
+  'Content-Type': 'application/json'
+}
+conn.request("POST", "/search", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
