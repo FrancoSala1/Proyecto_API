@@ -1,6 +1,8 @@
-class Address:
+from .geolo import Geologo
+class Address(Geologo):
     #este modelo es para representar una dirección de usuario.
-    def __init__(self, street, suite, city,zipcode):
+    def __init__(self, street, suite, city,zipcode, lat, lng):
+        super().__init__(lat, lng)
         self.street = street
         self.suite = suite
         self.city = city
