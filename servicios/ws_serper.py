@@ -1,15 +1,19 @@
-import http.client
-import json
+import requests
 
-conn = http.client.HTTPSConnection("google.serper.dev")
-payload = json.dumps({
-  "q": "apple inc"
-})
-headers = {
-  'X-API-KEY': '7a51b4757bb53b36091c98208ed4e9f74be43f7b',
-  'Content-Type': 'application/json'
-}
-conn.request("POST", "/search", payload, headers)
-res = conn.getresponse()
-data = res.read()
-print(data.decode("utf-8"))
+class WSSerper:
+    def __init__(self, api_key):
+        self.api_key = api_key
+
+    def buscar_en_google(self, consulta):
+        url = "https://serpapi.com/search"
+        params = {
+            "q": consulta,
+            "hl": "en",
+            "gl": "us",
+            "api_key": self.api_key
+        }
+        response = requests.get(url, params=params)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return {"error": "No se pudo realizar la búsqueda"}

@@ -1,22 +1,34 @@
 from auxiliares.urls_servicios import Url_Servicios
 from servicios.ws_jasonplaceholder import WS_JsonPlaceholder
+from modelos.usua import User
 
 class NegocioUrls:
-    def __init__(self):
-        self.servicio = WS_JsonPlaceholder()
+    def __init__(self, api_service):
+        self.api_service = api_service
 
-    def obtener_usuarios(self):
-        return self.servicio.obtener_usuarios()
-
-    def obtener_usuario_por_id(self, user_id):
-        return self.servicio.obtener_usuario_por_id(user_id)
-
-    def crear_usuario(self, data):
-        return self.servicio.crear_usuario(data)
-
-    def actualizar_usuario(self, user_id, data):
-        return self.servicio.actualizar_usuario(user_id, data)
-
-    def eliminar_usuario(self, user_id):
-        return self.servicio.eliminar_usuario(user_id)
-
+    def procesar_datos_usuarios(self):
+        # Para obtener datos de la API
+        datos_json = self.api_service.obtener_usuarios()
+        
+        # Transformar datos JSON en objetos User
+        usuarios = []
+        for usuario in datos_json:
+            address = usuario['Address']
+            geo = address['Geo']
+            company = usuario['Company']
+            usuarios.append(User(
+                id=usuario['id'],
+                name=usuario['name'],
+                username=usuario['username'],
+                email=usuario['email'],
+                street=address['calle'],
+                suite=address['suite'],
+                city=address['city'],
+                zipcode=address['zipcode'],
+                lat=geo['lat'],
+                lng=geo['lng'],
+                company_name=company['name'],
+                catch_phrase=company['catchPhrase'],
+                bs=company['bs']
+            ))
+        return usuarios
