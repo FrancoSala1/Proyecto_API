@@ -1,5 +1,5 @@
 from negocio.negocio_urls import NegocioUrls
-from  import WSJsonPlaceholder
+from servicios.ws_jsonplaceholder import WSJsonPlaceholder
 from servicios.ws_serper import WSSerper
 
 def main():
