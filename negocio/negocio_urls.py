@@ -1,5 +1,5 @@
 from auxiliares.urls_servicios import Url_Servicios
-from servicios.ws_jasonplaceholder import WS_JsonPlaceholder
+from servicios.ws_jsonplaceholder import WS_JsonPlaceholder
 from modelos.usua import User
 
 class NegocioUrls:
